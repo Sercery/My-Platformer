@@ -9,7 +9,7 @@ public class Goal : MonoBehaviour
     //Called when a Collision is etected
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("end");
     }

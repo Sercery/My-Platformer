@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,7 +14,21 @@ public class PlayerMovement : MonoBehaviour
 
         Rigidbody2D rb;    //place to store the rigidbody of the object
 
-        //public Trnnsform startPos
+    public static PlayerMovement instance;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    //public Trnnsform startPos
 
 
     // Start is called before the first frame update
